@@ -12,8 +12,12 @@ class Category(models.Model):
 
 class Blog(models.Model):
     title = models.CharField(max_length=255)
-    image = models.FileField(upload_to="uploads/",
-                             blank=True, null=True, default='')
+    image = models.FileField(
+        upload_to="uploads/",
+        blank=True,
+        null=True,
+        default="",
+    )
     content = models.TextField()
     Category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
